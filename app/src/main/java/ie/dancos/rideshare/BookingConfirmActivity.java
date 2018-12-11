@@ -22,8 +22,8 @@ public class BookingConfirmActivity extends Activity {
         Boolean sports = bundle.getBoolean("sports");
         String pick_up = bundle.getString("pick_up");
         String drop_off = bundle.getString("drop_off");
-      //  String time = bundle.getString("time");
-      //  String date = bundle.getString("date");
+        String time = bundle.getString("time");
+        String date = bundle.getString("date");
 
         TextView textView_to_pick_you = findViewById(R.id.textView_to_pick_you);
         textView_to_pick_you.setText(pick_up);
@@ -32,10 +32,10 @@ public class BookingConfirmActivity extends Activity {
         textView_drop_off.setText(drop_off);
 
         TextView textView_time = findViewById(R.id.textView_time);
-       // textView_time.setText(time);
+        textView_time.setText(time);
 
         TextView textView_date = findViewById(R.id.textView_date);
-      //  textView_date.setText(date);
+        textView_date.setText(date);
 
 
         ImageView imageView_car_picked = findViewById(R.id.imageView_car_picked);

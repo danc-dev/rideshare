@@ -11,7 +11,7 @@ import android.widget.RadioButton;
 
 public class BookingActivity extends Activity {
     private boolean mini_cab, mini_bus,sports, limo;
-
+    private EditText editText_pick_up,editText_drop_off,editText_date,editText_time;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,14 +19,10 @@ public class BookingActivity extends Activity {
         setContentView(R.layout.activity_booking);
 
         Button booking = findViewById(R.id.button_make_booking);
-        EditText editText_pick_up = findViewById(R.id.editText_pick_up);
-        EditText editText_drop_off = findViewById(R.id.editText_drop_off);
-        EditText editText_date= findViewById(R.id.editText_date);
-        EditText editText_time = findViewById(R.id.editText_time);
-        final String pick_up= editText_pick_up.getText().toString();
-        final String drop_off= editText_drop_off.getText().toString();
-   //     final String time= editText_time.getText().toString();
-//        final String date= editText_date.getText().toString();
+        editText_pick_up = findViewById(R.id.editText_pick_up);
+         editText_drop_off = findViewById(R.id.editText_drop_off);
+         editText_date= findViewById(R.id.editText_date);
+       editText_time = findViewById(R.id.editText_time);
 
 
         booking.setOnClickListener(new View.OnClickListener() {
@@ -36,10 +32,10 @@ public class BookingActivity extends Activity {
                 Intent intent = new Intent(BookingActivity.this,BookingConfirmActivity.class);
 
                 Bundle bundle = new Bundle();
-               // bundle.putString("pick_up",pick_up);
-             //   bundle.putString("drop_off",drop_off);
-             //   bundle.putString("time",time);
-            //    bundle.putString("date",date);
+                bundle.putString("pick_up", String.valueOf(editText_pick_up.getText()));
+                bundle.putString("drop_off",String.valueOf(editText_drop_off.getText()));
+                bundle.putString("time",String.valueOf(editText_time.getText()));
+                bundle.putString("date",String.valueOf(editText_date.getText()));
                 bundle.putBoolean("mini_cab",mini_cab);
                 bundle.putBoolean("mini_bus",mini_bus);
                 bundle.putBoolean("limo",limo);
