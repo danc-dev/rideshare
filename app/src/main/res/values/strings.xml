@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">RideShare</string>
+    <!-- Strings related to login -->
+    <string name="title_login"><b>RideShare</b>  <b>     </b>     Login or Sign up</string>
+
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_up">Sign Up</string>
+    <string name="action_sign_in_short">Log in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_my_location">My Location</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="if_you_dont_have_an_account">( If you\'d like to join <b><i>RideShare )</i></b></string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_sign_up">Sign Up</string>
+    <string name="title_activity_booking">Booking</string>
+    <string name="title_activity_booking_confirm">Confirm Booking</string>
+    <string name="pick_your_ride">Pick\nyour\nride</string>
+    <string name="pick_up">Pick Up</string>
+    <string name="drop_off">Drop Off</string>
+    <string name="mini_cab">Mini Cab</string>
+    <string name="limo">Limousine</string>
+    <string name="sports">Porsche</string>
+    <string name="mini_bus">Mini Bus</string>
+    <string name="make_booking">Make Booking</string>
+
+    <string name="your">Your</string>
+    <string name="will_pick_you_up">Will pick you up at</string>
+    <string name="drop_you_off">and drop you off at</string>
+    <string name="drop_off_location">drop off location</string>
+    <string name="pick_up_location">pick up location</string>
+    <string name="pick_up_time">Pick up time</string>
+    <string name="pick_up_time_set">Pick up time</string>
+    <string name="pick_up_date">Pick up date</string>
+    <string name="pick_up_date_set">Pick up date</string>
+    <string name="confirm_and_pay">Confirm and pay</string>
+    <string name="car_picked">Mini Cab</string>
+
+
+    <string name="show_car_on_map">Check for nearest car</string>
+    <string name="show_history">Check ride history</string>
+    <string name="show_ride_cost">Journey cost calculator</string>
+
+
+</resources>
