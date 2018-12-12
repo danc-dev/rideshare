@@ -20,9 +20,9 @@ public class BookingActivity extends Activity {
 
         Button booking = findViewById(R.id.button_make_booking);
         editText_pick_up = findViewById(R.id.editText_pick_up);
-         editText_drop_off = findViewById(R.id.editText_drop_off);
-         editText_date= findViewById(R.id.editText_date);
-       editText_time = findViewById(R.id.editText_time);
+        editText_drop_off = findViewById(R.id.editText_drop_off);
+        editText_date= findViewById(R.id.editText_date);
+        editText_time = findViewById(R.id.editText_time);
 
 
         booking.setOnClickListener(new View.OnClickListener() {
@@ -42,7 +42,7 @@ public class BookingActivity extends Activity {
                 bundle.putBoolean("sports",sports);
                 intent.putExtras(bundle);
                 startActivity(intent);
-             }
+            }
         });
 
 
@@ -78,3 +78,4 @@ public class BookingActivity extends Activity {
 
 
 }
+

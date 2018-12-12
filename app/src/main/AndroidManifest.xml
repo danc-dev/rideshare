@@ -49,12 +49,10 @@
             android:name=".SignUpActivity"
             android:label="@string/title_activity_sign_up" />
         <activity
-            android:name=".BookingActivity"
-            android:label="@string/title_activity_booking" />
-        <activity android:name=".BookingConfirmActivity"
-            android:label="@string/title_activity_booking_confirm"
-            />
-        <activity android:name=".NavigationActivity"></activity>
+            android:name=".BookingConfirmActivity"
+            android:label="@string/title_activity_booking_confirm" />
+        <activity android:name=".NavigationActivity" />
+        <activity android:name=".BookingActivity"></activity>
     </application>
 
 </manifest>

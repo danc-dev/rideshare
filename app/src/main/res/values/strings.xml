@@ -21,11 +21,10 @@
     <string name="if_you_dont_have_an_account">( If you\'d like to join <b><i>RideShare )</i></b></string>
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_sign_up">Sign Up</string>
-    <string name="title_activity_booking">Booking</string>
     <string name="title_activity_booking_confirm">Confirm Booking</string>
     <string name="pick_your_ride">Pick\nyour\nride</string>
-    <string name="pick_up">Pick Up</string>
-    <string name="drop_off">Drop Off</string>
+    <string name="pick_up">Pick up location</string>
+    <string name="drop_off">Drop off location</string>
     <string name="mini_cab">Mini Cab</string>
     <string name="limo">Limousine</string>
     <string name="sports">Porsche</string>
@@ -48,6 +47,7 @@
     <string name="show_car_on_map">Check for nearest car</string>
     <string name="show_history">Check ride history</string>
     <string name="show_ride_cost">Journey cost calculator</string>
+    <string name="title_activity_booking">BookingActivity</string>
 
 
 </resources>
