@@ -31,6 +31,9 @@ public class BookingActivity extends Activity {
 
                 Intent intent = new Intent(BookingActivity.this,BookingConfirmActivity.class);
 
+                // default of min-cab - set min-cab to true in the case where no option was selected by the customer
+                if (!sports & !limo & !mini_bus) { mini_cab=true;}
+
                 Bundle bundle = new Bundle();
                 bundle.putString("pick_up", String.valueOf(editText_pick_up.getText()));
                 bundle.putString("drop_off",String.valueOf(editText_drop_off.getText()));
@@ -58,19 +61,19 @@ public class BookingActivity extends Activity {
         switch (view.getId()) {
             case R.id.rb_mini_cab:
                 if (checked)
-                    mini_cab = true;
+                    mini_cab = true;mini_bus=false;limo=false;sports=false;
                 break;
             case R.id.rb_mini_bus:
                 if (checked)
-                    mini_bus = true;
+                    mini_bus = true;mini_cab=false;limo=false;sports=false;
                 break;
             case R.id.rb_limo:
                 if (checked)
-                    limo = true;
+                    limo = true;mini_cab=false;mini_bus=false;sports=false;
                 break;
             case R.id.rb_sports:
                 if (checked)
-                    sports = true;
+                    sports = true;mini_cab=false;mini_bus=false;limo=false;
                 break;
         }
     }

@@ -25,11 +25,11 @@ public class BookingConfirmActivity extends Activity {
         String time = bundle.getString("time");
         String date = bundle.getString("date");
 
-        TextView textView_to_pick_you = findViewById(R.id.textView_to_pick_you);
-        textView_to_pick_you.setText(pick_up);
+        TextView textView_pick_up_location = findViewById(R.id.textView_pick_up_location);
+        textView_pick_up_location.setText(pick_up);
 
-        TextView textView_drop_off = findViewById(R.id.textView_drop_off);
-        textView_drop_off.setText(drop_off);
+        TextView textView_drop_off_location = findViewById(R.id.textView_drop_off_location);
+        textView_drop_off_location.setText(drop_off);
 
         TextView textView_time = findViewById(R.id.textView_time);
         textView_time.setText(time);

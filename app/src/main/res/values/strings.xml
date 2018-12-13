@@ -31,23 +31,23 @@
     <string name="mini_bus">Mini Bus</string>
     <string name="make_booking">Make Booking</string>
 
-    <string name="your">Your</string>
-    <string name="will_pick_you_up">Will pick you up at</string>
-    <string name="drop_you_off">and drop you off at</string>
-    <string name="drop_off_location">drop off location</string>
-    <string name="pick_up_location">pick up location</string>
+
+    <!-- Confirm Order Screen -->
+    <string name="booking_order">Booking Order</string>
+      <string name="drop_off_location">Drop off location</string>
+    <string name="pick_up_location">Pick up location</string>
     <string name="pick_up_time">Pick up time</string>
     <string name="pick_up_time_set">Pick up time</string>
     <string name="pick_up_date">Pick up date</string>
     <string name="pick_up_date_set">Pick up date</string>
     <string name="confirm_and_pay">Confirm and pay</string>
-    <string name="car_picked">Mini Cab</string>
+    <string name="car_picked">Car chosen</string>
 
 
     <string name="show_car_on_map">Check for nearest car</string>
     <string name="show_history">Check ride history</string>
     <string name="show_ride_cost">Journey cost calculator</string>
-    <string name="title_activity_booking">BookingActivity</string>
+    <string name="title_activity_booking">Booking</string>
 
 
 </resources>

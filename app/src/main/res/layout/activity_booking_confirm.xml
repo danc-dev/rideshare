@@ -1,142 +1,187 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".BookingConfirmActivity"
-    tools:layout_editor_absoluteY="81dp">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".BookingConfirmActivity">
 
-    <TextView
-        android:id="@+id/textView_your"
-        style="@style/text_large"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="58dp"
-        android:layout_marginTop="49dp"
-        android:text="@string/your"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:id="@+id/linearLayout_booking_order"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/silver"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginTop="24dp"
+        android:padding="16dp"
+        >
 
-    <ImageView
-        android:id="@+id/imageView_car_picked"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="49dp"
-        android:layout_marginEnd="7dp"
-        android:contentDescription="@string/car_picked"
-        android:src="@android:drawable/star_big_on"
-        app:layout_constraintEnd_toStartOf="@+id/textView_to_pick_you"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/textView_booking_order"
+            style="@style/text_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/booking_order"
+            android:textAlignment="center" />
 
-    <TextView
-        android:id="@+id/textView_will_pick_you_up"
-        style="@style/text_large"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:text="@string/will_pick_you_up"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView_to_pick_you"
-        app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/textView_to_pick_you"
-        style="@style/text_large"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="27dp"
-        android:layout_marginBottom="26dp"
-        android:text="@string/pick_up_location"
-        app:layout_constraintBottom_toTopOf="@+id/textView_pick_up"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <ImageView
+            android:id="@+id/imageView_car_picked"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/car_picked"
+            android:src="@android:drawable/star_big_on"
+            android:layout_gravity="center"/>
 
-    <TextView
-        android:id="@+id/textView_pick_up"
-        style="@style/text_large"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:text="@string/drop_off_location"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView_drop_off"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/textView_time"
-        style="@style/text_large"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="17dp"
-        android:layout_marginTop="34dp"
-        android:text="@string/pick_up_time_set"
-        app:layout_constraintStart_toEndOf="@+id/textView_drop_off"
-        app:layout_constraintTop_toBottomOf="@+id/textView_pick_up" />
 
-    <TextView
-        android:id="@+id/textView_drop_off"
-        style="@style/text_large"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="185dp"
-        android:text="@string/drop_you_off"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/textView_car_type_text"
+                style="@style/text_info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:text="@string/car_picked" />
 
-    <TextView
-        android:id="@+id/textView14"
-        style="@style/text_large"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="34dp"
-        android:text="@string/pick_up_time"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_drop_off" />
+            <TextView
+                android:id="@+id/textView_car_type"
+                style="@style/text_large"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_weight="6"
+                android:text="Mini Cab" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView_pick_up_text"
+                style="@style/text_info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:text="@string/pick_up_location" />
+
+            <TextView
+                android:id="@+id/textView_pick_up_location"
+                style="@style/text_large"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_weight="6"
+                android:text="@string/pick_up_location" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView_drop_off_text"
+                style="@style/text_info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:text="@string/drop_off_location" />
+
+            <TextView
+                android:id="@+id/textView_drop_off_location"
+                style="@style/text_large"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_weight="6"
+                android:text="@string/drop_off_location" />
+
+
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textview_pick_up_time_text"
+                style="@style/text_info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:text="@string/pick_up_time" />
+
+            <TextView
+                android:id="@+id/textView_time"
+                style="@style/text_large"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_weight="6"
+                android:text="@string/pick_up_time_set" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/textView_pick_up_date_text"
+                style="@style/text_info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:text="@string/pick_up_date" />
+
+            <TextView
+                android:id="@+id/textView_date"
+                style="@style/text_large"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_weight="6"
+                android:text="@string/pick_up_date_set" />
+
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
     <Button
         android:id="@+id/button_confirm_and_pay"
         style="@style/button_large"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="1dp"
-        android:text="@string/confirm_and_pay"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView_car_type"
-        style="@style/text_large"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="49dp"
-        android:layout_marginEnd="20dp"
-        android:text="@string/car_picked"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView_date"
-        style="@style/text_large"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="39dp"
-        android:layout_marginTop="50dp"
-        android:text="@string/pick_up_date_set"
-        app:layout_constraintStart_toEndOf="@+id/textView_pick_up_date"
-        app:layout_constraintTop_toBottomOf="@+id/textView_time" />
-
-    <TextView
-        android:id="@+id/textView_pick_up_date"
-        style="@style/text_large"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="34dp"
-        android:text="@string/pick_up_date"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView_date"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:text="@string/confirm_and_pay" />
 
 
-</android.support.constraint.ConstraintLayout>
+
+
+
+</LinearLayout>
