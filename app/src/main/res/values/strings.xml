@@ -34,7 +34,7 @@
 
     <!-- Confirm Order Screen -->
     <string name="booking_order">Booking Order</string>
-      <string name="drop_off_location">Drop off location</string>
+    <string name="drop_off_location">Drop off location</string>
     <string name="pick_up_location">Pick up location</string>
     <string name="pick_up_time">Pick up time</string>
     <string name="pick_up_time_set">Pick up time</string>
@@ -48,6 +48,7 @@
     <string name="show_history">Check ride history</string>
     <string name="show_ride_cost">Journey cost calculator</string>
     <string name="title_activity_booking">Booking</string>
+    <string name="title_activity_calculator">Journey Cost Calculator</string>
 
 
 </resources>

@@ -51,8 +51,11 @@
         <activity
             android:name=".BookingConfirmActivity"
             android:label="@string/title_activity_booking_confirm" />
-        <activity android:name=".NavigationActivity" />
-        <activity android:name=".BookingActivity"></activity>
+        <activity android:name=".UserNavigationActivity" />
+        <activity android:name=".BookingActivity" />
+        <activity
+            android:name=".CalculatorActivity"
+            android:label="@string/title_activity_calculator"></activity>
     </application>
 
 </manifest>

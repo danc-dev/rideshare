@@ -100,7 +100,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         button_go2_navigation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this,NavigationActivity.class));
+                startActivity(new Intent(LoginActivity.this,UserNavigationActivity.class));
             }
         });
 */
@@ -201,7 +201,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             mAuthTask = new UserLoginTask(email, password);
             mAuthTask.execute((Void) null);
 
-            startActivity(new Intent(LoginActivity.this,NavigationActivity.class));
+            startActivity(new Intent(LoginActivity.this,UserNavigationActivity.class));
 
         }
     }
