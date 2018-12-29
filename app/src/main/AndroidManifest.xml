@@ -55,7 +55,10 @@
         <activity android:name=".BookingActivity" />
         <activity
             android:name=".CalculatorActivity"
-            android:label="@string/title_activity_calculator"></activity>
+            android:label="@string/title_activity_calculator" />
+        <activity
+            android:name=".RideHistoryActivity"
+            android:label="@string/title_activity_ride_history"></activity>
     </application>
 
 </manifest>

@@ -49,6 +49,7 @@
     <string name="show_ride_cost">Journey cost calculator</string>
     <string name="title_activity_booking">Booking</string>
     <string name="title_activity_calculator">Journey Cost Calculator</string>
+    <string name="title_activity_ride_history">Your Ride History</string>
 
 
 </resources>

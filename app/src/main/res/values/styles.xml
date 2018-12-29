@@ -40,18 +40,18 @@
         <item name="android:textColor">@color/common_google_signin_btn_text_dark</item>
         <item name="android:layout_margin">4dp</item>
     </style>
+
     <style name="text_large">
         <!-- Customize your theme here. -->
         <item name="android:textSize">20sp</item>
         <item name="android:textColor">@color/black</item>
-       </style>
+    </style>
 
     <style name="text_header">
         <!-- Customize your theme here. -->
         <item name="android:textSize">30sp</item>
         <item name="android:textColor">@color/blue</item>
     </style>
-
 
 
     <style name="AppTheme.NoActionBar">

@@ -34,7 +34,7 @@ public class UserNavigationActivity extends Activity {
         final Button button_go2_ride_history = findViewById(R.id.button_go2_ride_history);
         button_go2_ride_history.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(UserNavigationActivity.this,MapsActivity.class);                       startActivity(intent);
+                Intent intent = new Intent(UserNavigationActivity.this,RideHistoryActivity.class);                       startActivity(intent);
             }
         });
 
