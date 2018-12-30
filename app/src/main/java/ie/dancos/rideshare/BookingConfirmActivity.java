@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -60,7 +61,15 @@ public class BookingConfirmActivity extends AppCompatActivity {
         if (sports){imageView_car_picked.setImageResource(R.drawable.porsche);textView_car_type.setText("Porsche");}
 
 
+        Button button_confirm_and_pay = findViewById(R.id.button_confirm_and_pay);
 
+        button_confirm_and_pay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(BookingConfirmActivity.this,ThanksActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
     }

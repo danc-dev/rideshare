@@ -44,6 +44,11 @@
     <string name="show_history">Check ride history</string>
     <string name="show_ride_cost">Journey cost calculator</string>
 
+    <string name="confirmed_paid">Your ride is confirmed and paid</string>
+    <string name="thank_you">Thank You</string>
+
+
+
     <!-- Screen titles -->
     <string name="title_activity_sign_up">Sign Up</string>
     <string name="title_activity_booking_confirm">Confirm Booking</string>
@@ -53,5 +58,6 @@
     <string name="title_my_location">My Location</string>
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_user_navigation">Options</string>
+    <string name="title_activity_thanks">Thanks</string>
 
 </resources>
