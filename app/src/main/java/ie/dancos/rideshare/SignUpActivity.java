@@ -1,11 +1,13 @@
 package ie.dancos.rideshare;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 public class SignUpActivity extends AppCompatActivity {
@@ -45,9 +47,23 @@ public class SignUpActivity extends AppCompatActivity {
 
 
 
-        float val = 1.3f;
+        float val = 1.2f;
         floatingActionButton.setScaleY(val);
         floatingActionButton.setScaleX(val);
+
+
+
+
+
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SignUpActivity.this,UserNavigationActivity.class);
+                startActivity(intent);
+            }
+        });
     }
+
+
 
 }

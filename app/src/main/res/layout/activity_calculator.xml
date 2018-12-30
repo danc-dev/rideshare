@@ -167,6 +167,10 @@
                 android:textColor="@color/red"
                 android:textSize="30sp" />
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
             <Button
                 android:id="@+id/button_calculate"
                 style="@style/button_large"

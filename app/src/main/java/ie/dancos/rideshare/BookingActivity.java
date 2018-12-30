@@ -3,6 +3,7 @@ package ie.dancos.rideshare;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -10,7 +11,7 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 
 
-public class BookingActivity extends Activity {
+public class BookingActivity extends AppCompatActivity {
     private boolean mini_cab, mini_bus,sports, limo, now;
     private EditText editText_pick_up,editText_drop_off,editText_date,editText_time;
     private TextView textView_pick_up_time,textView_pick_up_date;

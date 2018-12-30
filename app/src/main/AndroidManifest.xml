@@ -47,12 +47,17 @@
             android:label="@string/title_activity_maps" />
         <activity
             android:name=".SignUpActivity"
-            android:label="@string/title_activity_sign_up" />
+            android:label="@string/title_activity_sign_up"
+            />
         <activity
             android:name=".BookingConfirmActivity"
             android:label="@string/title_activity_booking_confirm" />
-        <activity android:name=".UserNavigationActivity" />
-        <activity android:name=".BookingActivity" />
+        <activity android:name=".UserNavigationActivity"
+            android:label="@string/title_activity_user_navigation"
+            />
+        <activity android:name=".BookingActivity"
+            android:label="@string/title_activity_booking"
+            />
         <activity
             android:name=".CalculatorActivity"
             android:label="@string/title_activity_calculator" />

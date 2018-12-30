@@ -10,54 +10,47 @@
     <Button
         android:id="@+id/button_go2_make_booking"
         style="@style/button_large"
-         android:layout_width="0dp"
+        android:layout_width="352dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="69dp"
-        android:layout_marginEnd="16dp"
         android:layout_marginBottom="65dp"
         android:text="@string/make_booking"
         app:layout_constraintBottom_toTopOf="@+id/button_go2_map"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/button_go2_map"
+        app:layout_constraintStart_toStartOf="@+id/button_go2_map"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button_go2_map"
         style="@style/button_large"
-        android:layout_width="0dp"
+        android:layout_width="352dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="186dp"
-        android:layout_marginEnd="16dp"
         android:text="@string/show_car_on_map"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/button_go2_ride_history"
+        app:layout_constraintStart_toStartOf="@+id/button_go2_ride_history"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button_go2_ride_history"
         style="@style/button_large"
-        android:layout_width="0dp"
+        android:layout_width="352dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="46dp"
-        android:layout_marginEnd="16dp"
         android:text="@string/show_history"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/button_go2_calculate_cost"
+        app:layout_constraintStart_toStartOf="@+id/button_go2_calculate_cost"
         app:layout_constraintTop_toBottomOf="@+id/button_go2_map" />
 
     <Button
         android:id="@+id/button_go2_calculate_cost"
         style="@style/button_large"
-        android:layout_width="0dp"
+        android:layout_width="358dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="13dp"
-        android:layout_marginEnd="13dp"
         android:layout_marginBottom="68dp"
         android:text="@string/show_ride_cost"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 </android.support.constraint.ConstraintLayout>

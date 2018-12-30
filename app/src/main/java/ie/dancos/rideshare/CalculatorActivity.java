@@ -35,7 +35,6 @@ public class CalculatorActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-
                 String distanceString = (String.valueOf(editText_distance.getText()));
 
                 //error check
