@@ -4,7 +4,7 @@
     <string name="title_login"><b>RideShare</b>  <b>     </b>     Login or Sign up</string>
 
     <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password (optional)</string>
+    <string name="prompt_password">Password</string>
     <string name="action_sign_up">Sign Up</string>
     <string name="action_sign_in_short">Log in</string>
     <string name="error_invalid_email">This email address is invalid</string>
@@ -17,6 +17,7 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="if_you_dont_have_an_account">( If you\'d like to join <b><i>RideShare )</i></b></string>
+    <string name="if_you_have_an_account">( If you have joined already )</string>
     <string name="title_notifications">Notifications</string>
     <string name="pick_your_ride">Pick\nyour\nride</string>
     <string name="pick_up">Pick up location</string>
@@ -25,7 +26,7 @@
     <string name="limo">Limousine</string>
     <string name="sports">Porsche</string>
     <string name="mini_bus">Mini Bus</string>
-    <string name="make_booking">Make Booking</string>
+    <string name="make_booking">Make A Booking</string>
 
 
     <!-- Confirm Order Screen -->
@@ -45,8 +46,10 @@
     <string name="show_ride_cost">Journey cost calculator</string>
 
     <string name="confirmed_paid">Your ride is confirmed and paid</string>
+    <string name="registration_successfull">Your registration was successful</string>
     <string name="thank_you">Thank You</string>
-
+    <string name="welcome">Welcome to Ride Share</string>
+    <string name="logout">Logout</string>
 
 
     <!-- Screen titles -->

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "187157927542",
+    "firebase_url": "https://rd-year-project-509e1.firebaseio.com",
+    "project_id": "rd-year-project-509e1",
+    "storage_bucket": "rd-year-project-509e1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:187157927542:android:8b815b915b4faacb",
+        "android_client_info": {
+          "package_name": "ie.dancos.rideshare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "187157927542-rbs3k6hus2csfct3pucvp8lrbppkl7mt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ie.dancos.rideshare",
+            "certificate_hash": "5086c12b28bf9a6259c36b4a3e6b4aeba42ca6e4"
+          }
+        },
+        {
+          "client_id": "187157927542-tpm3vb86vs3i8mk3rjq8l9m1kklu43dq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBoTL_OfZGjmHQW2UKDW_8N5UFo919j68Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "187157927542-tpm3vb86vs3i8mk3rjq8l9m1kklu43dq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

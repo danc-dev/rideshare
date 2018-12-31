@@ -23,13 +23,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".LoginActivity"
-            android:label="@string/title_login">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:label="@string/title_login"></activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -65,8 +59,17 @@
             android:label="@string/title_activity_ride_history" />
         <activity android:name=".ThanksActivity">
             android:label="@string/title_activity_thanks"
-
         </activity>
+        <activity
+            android:name=".UserLoginActivity"
+            android:label="@string/title_login">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".RegistrationDoneActivity"></activity>
     </application>
 
 </manifest>

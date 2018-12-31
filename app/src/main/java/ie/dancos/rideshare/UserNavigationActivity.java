@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 public class UserNavigationActivity extends AppCompatActivity {
 
@@ -42,6 +45,18 @@ public class UserNavigationActivity extends AppCompatActivity {
         button_go2_calculate_cost.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(UserNavigationActivity.this,CalculatorActivity.class);                   startActivity(intent);
+            }
+        });
+
+        final Button button_logout = findViewById(R.id.button_logout);
+        button_logout.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                Toast.makeText(UserNavigationActivity.this, "You have signed out",Toast.LENGTH_LONG);
+
+
+
+                Intent intent = new Intent(UserNavigationActivity.this,UserLoginActivity.class);                   startActivity(intent);
             }
         });
 
