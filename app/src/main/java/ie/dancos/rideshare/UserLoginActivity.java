@@ -65,22 +65,27 @@ public class UserLoginActivity extends AppCompatActivity {
                 //get email and password
                 final String email = Email.getText().toString();
                 final String password = Password.getText().toString();
-                // creating the Auth user using email and password
-                mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(UserLoginActivity.this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (!task.isSuccessful()){
-                            Toast.makeText(UserLoginActivity.this, "A sign up error has occurred",Toast.LENGTH_LONG);
+
+                if ((email.equals("")) | password.equals("") ){
+                    Toast.makeText(UserLoginActivity.this, "Add your email and password",Toast.LENGTH_LONG).show();
+                }
+                else {
+
+                    // creating the Auth user using email and password
+                    mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(UserLoginActivity.this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (!task.isSuccessful()) {
+                                Toast.makeText(UserLoginActivity.this, "A sign up error has occurred", Toast.LENGTH_LONG).show();
+                            } else {
+                                String user_id = mAuth.getCurrentUser().getUid();
+                                DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("cabs").child("customers").child(user_id);
+                                current_user_db.setValue(true);
+                            }
                         }
-                        else {
-                            String user_id = mAuth.getCurrentUser().getUid();
-                            DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("cabs").child("customers").child(user_id);
-                            current_user_db.setValue(true);
-                        }
+                    });
+
                     }
-                });
-
-
             }
         });
 
@@ -91,16 +96,20 @@ public class UserLoginActivity extends AppCompatActivity {
                 //get email and password
                 final String email = Email.getText().toString();
                 final String password = Password.getText().toString();
-                // creating the Auth user using email and password
-                mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(UserLoginActivity.this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (!task.isSuccessful()){
-                            Toast.makeText(UserLoginActivity.this, "A sign in error has occurred",Toast.LENGTH_LONG);
+                if ((email.equals("")) | password.equals("") ){
+                    Toast.makeText(UserLoginActivity.this, "Add your email and password",Toast.LENGTH_LONG).show();
+                }
+                else {
+                    // creating the Auth user using email and password
+                    mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(UserLoginActivity.this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (!task.isSuccessful()) {
+                                Toast.makeText(UserLoginActivity.this, "A sign in error has occurred", Toast.LENGTH_LONG).show();
+                            }
                         }
-                    }
-                });
-
+                    });
+                }
 
             }
         });
