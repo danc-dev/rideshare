@@ -39,6 +39,13 @@ public class UserLoginActivity extends AppCompatActivity {
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 if(user!=null){
                     Intent intent = new Intent(UserLoginActivity.this,RegistrationDoneActivity.class);
+
+                    Bundle bundle = new Bundle();
+                    final String email = Email.getText().toString();
+                    final String password = Password.getText().toString();
+                    bundle.putString("email", email);
+                    bundle.putString("password", password);
+                    intent.putExtras(bundle);
                     startActivity(intent);
                     //finish();
                     return;
@@ -96,6 +103,7 @@ public class UserLoginActivity extends AppCompatActivity {
                 //get email and password
                 final String email = Email.getText().toString();
                 final String password = Password.getText().toString();
+                // error check for empty
                 if ((email.equals("")) | password.equals("") ){
                     Toast.makeText(UserLoginActivity.this, "Add your email and password",Toast.LENGTH_LONG).show();
                 }

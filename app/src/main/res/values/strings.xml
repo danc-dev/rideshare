@@ -49,6 +49,7 @@
     <string name="registration_successfull">Your registration was successful</string>
     <string name="thank_you">Thank You</string>
     <string name="welcome">Welcome to Ride Share</string>
+    <string name="add_user_info">Add your name and number below\n(if you have not already)</string>
     <string name="logout">Logout</string>
 
 
@@ -62,5 +63,6 @@
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_user_navigation">Options</string>
     <string name="title_activity_thanks">Thanks</string>
+    <string name="title_activity_add_user_info">Rideshare - add your info</string>
 
 </resources>
