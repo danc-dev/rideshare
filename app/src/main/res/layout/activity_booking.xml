@@ -154,7 +154,7 @@
             style="@style/text_large"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Today" />
+            android:text="@string/pick_up_date" />
 
         <EditText
             android:id="@+id/editText_date"

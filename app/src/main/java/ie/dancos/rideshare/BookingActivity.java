@@ -48,11 +48,7 @@ public class BookingActivity extends AppCompatActivity {
                 // default of min-cab - set min-cab to true in the case where no option was selected by the customer
                 if (!sports & !limo & !mini_bus) { mini_cab=true;}
                 Bundle bundle = new Bundle();
-              //  if(later) {
-              //      bundle.putString("time", String.valueOf(editText_time.getText()));
-              //      bundle.putString("date", String.valueOf(editText_date.getText()));
-              //  }
-             //   if(now){
+
                 bundle.putBoolean("now",now);
                 bundle.putString("pick_up", String.valueOf(editText_pick_up.getText()));
                 bundle.putString("drop_off", String.valueOf(editText_drop_off.getText()));

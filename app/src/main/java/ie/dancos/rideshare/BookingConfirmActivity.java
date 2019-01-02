@@ -27,7 +27,7 @@ public class BookingConfirmActivity extends AppCompatActivity {
     private String userID;
     private FirebaseAuth mAuth;
     private DatabaseReference mRideshareDatabase;
-    private String pick_up,drop_off,time,date, carType, phoneNumber,name1;
+    private String pick_up,drop_off,time,date, carType, phone,customerName,email;
     private TextView textView_drop_off_location,textView_pick_up_location, textView_car_type,textView_date,textView_time;
 
     @Override
@@ -84,10 +84,9 @@ public class BookingConfirmActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         userID = mAuth.getCurrentUser().getUid();
-         phoneNumber = mAuth.getCurrentUser().getPhoneNumber();
-         name1 = mAuth.getCurrentUser().getDisplayName();
         mRideshareDatabase = FirebaseDatabase.getInstance().getReference().child("cabs").child("customers").child(userID);
-        mRideshareDatabase = FirebaseDatabase.getInstance().getReference().child("cabs").child("customers").child(userID).child("name");
+
+        getCustomerNameAndPhone();
 
         getCustomerBooking_ifNotExist();
 
@@ -98,7 +97,7 @@ public class BookingConfirmActivity extends AppCompatActivity {
         button_confirm_and_pay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(BookingConfirmActivity.this, "Thanks your booking was saved"+phoneNumber+name1,Toast.LENGTH_LONG).show();
+                Toast.makeText(BookingConfirmActivity.this, "Thanks your booking was saved",Toast.LENGTH_LONG).show();
 
                 saveCustomerBookingInfoToDatabase();
                 Intent intent = new Intent(BookingConfirmActivity.this,ThanksActivity.class);
@@ -109,6 +108,32 @@ public class BookingConfirmActivity extends AppCompatActivity {
 
     }
 
+    private void getCustomerNameAndPhone() {
+        mRideshareDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot.exists()){
+                    for (DataSnapshot child:dataSnapshot.getChildren()){
+                        if (child.getKey().equals("name")){
+                            customerName = child.getValue().toString();
+                        }
+                        if (child.getKey().equals("phone")){
+                            phone = child.getValue().toString();
+                        }
+                        if (child.getKey().equals("email")){
+                            email = child.getValue().toString();
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+    }
 
 
     private void getCustomerBooking_ifNotExist() {
@@ -140,6 +165,7 @@ public class BookingConfirmActivity extends AppCompatActivity {
                     }
 
 
+
                 }
             }
 
@@ -165,6 +191,9 @@ public class BookingConfirmActivity extends AppCompatActivity {
         customerBookingInfo.put("drop_off",drop_off);
         customerBookingInfo.put("time",time);
         customerBookingInfo.put("date",date);
+        customerBookingInfo.put("name",customerName);
+        customerBookingInfo.put("phone",phone);
+        customerBookingInfo.put("email",email);
 
 
         Random random = new Random();
