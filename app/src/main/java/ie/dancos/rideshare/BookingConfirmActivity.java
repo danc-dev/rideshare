@@ -201,6 +201,7 @@ public class BookingConfirmActivity extends AppCompatActivity {
         String randomNumberString=String.valueOf(randomNumber);
         String bookingNumber = "booking_"+randomNumberString;
         // add to database
+       // mRideshareDatabase = FirebaseDatabase.getInstance().getReference().child("cabs").child("bookings").child(userID).child(bookingNumber);
         mRideshareDatabase = FirebaseDatabase.getInstance().getReference().child("cabs").child("bookings").child(userID).child(bookingNumber);
         mRideshareDatabase.updateChildren(customerBookingInfo);
         Toast.makeText(BookingConfirmActivity.this, "Thanks your booking was saved",Toast.LENGTH_LONG).show();

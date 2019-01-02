@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">RideShare</string>
     <!-- Strings related to login -->
-    <string name="title_login"><b>RideShare</b>  <b>     </b>     Login or Sign up</string>
 
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -43,7 +42,7 @@
 
     <string name="show_car_on_map">Check for nearest car</string>
     <string name="show_history">Check ride history</string>
-    <string name="show_ride_cost">Journey cost calculator</string>
+    <string name="show_ride_cost">Journey cost estimator</string>
 
     <string name="confirmed_paid">Your ride is confirmed and paid</string>
     <string name="registration_successfull">Your registration was successful</string>
@@ -54,10 +53,11 @@
 
 
     <!-- Screen titles -->
+    <string name="title_login"><b>RideShare</b>  <b>     </b>     Sign in or Register</string>
     <string name="title_activity_sign_up">Sign Up</string>
     <string name="title_activity_booking_confirm">Confirm Booking</string>
     <string name="title_activity_booking">Booking</string>
-    <string name="title_activity_calculator">Journey Cost Calculator</string>
+    <string name="title_activity_calculator">Journey Cost Estimator</string>
     <string name="title_activity_ride_history">Your Ride History</string>
     <string name="title_my_location">My Location</string>
     <string name="title_activity_maps">Map</string>
