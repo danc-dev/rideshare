@@ -9,6 +9,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 
 public class RideHistoryActivity extends AppCompatActivity {
@@ -20,22 +27,72 @@ public class RideHistoryActivity extends AppCompatActivity {
     private ArrayList<RideObject> rideObjectArrayList = new ArrayList<RideObject>();
     private RideObject rideObject = new RideObject();
 
+    private String userID;
+    private FirebaseAuth mAuth;
+    private DatabaseReference mRideshareDatabase;
+    private String ride,pick_up,drop_off,time,date, carType, phone,customerName,email;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ride_history);
 
-        RecyclerView = findViewById(R.id.recycleView);
+        mAuth = FirebaseAuth.getInstance();
+        userID = mAuth.getCurrentUser().getUid();
+       // mRideshareDatabase = FirebaseDatabase.getInstance().getReference().child("cabs").child("customers").child(userID);
+       // mRideshareDatabase = FirebaseDatabase.getInstance().getReference().child("cabs").child("bookings").child(userID).child("booking_497782");
+       // mRideshareDatabase = FirebaseDatabase.getInstance().getReference().child("cabs").child("bookings").child(userID).child("booking_497782");
+        mRideshareDatabase = FirebaseDatabase.getInstance().getReference().child("cabs").child("bookings").child(userID);
 
+
+        RecyclerView = findViewById(R.id.recycleView);
         mLayoutManager = new LinearLayoutManager(this);
         RecyclerView.setLayoutManager(mLayoutManager);
-
-        mAdapter= new RideHistoryAdapter(getRideHistory());
+        getCustomerBookings();
+       // mAdapter= new RideHistoryAdapter(getRideHistory());
+        mAdapter= new RideHistoryAdapter(getCustomerBookings());
         RecyclerView.setAdapter(mAdapter);
         mAdapter.notifyDataSetChanged();
 
     }
 
+    private ArrayList<RideObject>  getCustomerBookings() {
+        mRideshareDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    for (DataSnapshot child : dataSnapshot.getChildren()) {
+                        RideObject rideObject = new RideObject();
+                        if (child.getKey().equals("carType")) {
+                            carType = child.getValue().toString();
+                        }
+                        if (child.getKey().equals("pick_up")) {
+                            pick_up = child.getValue().toString();
+                        }
+                        if (child.getKey().equals("drop_off")) {
+                            drop_off = child.getValue().toString();
+                        }
+                        if (child.getKey().equals("time")) {
+                            time = child.getValue().toString();
+                        }
+                        if (child.getKey().equals("date")) {
+                            date = child.getValue().toString();
+                        }
+                        rideObject.setRide(carType);
+                        rideObject.setPickupLocation(pick_up);
+                        rideObject.setPickupTime(time);
+                        rideObject.setPickupDate(date);
+                        rideObjectArrayList.add(rideObject);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+            }
+        });
+        return rideObjectArrayList;
+    }
 
 
     private ArrayList<RideObject> getRideHistory(){

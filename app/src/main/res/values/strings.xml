@@ -43,7 +43,7 @@
 
     <string name="show_car_on_map">Check for nearest car</string>
     <string name="show_history">Check ride history</string>
-    <string name="show_ride_cost">Journey cost calculator</string>
+    <string name="show_ride_cost">Journey cost estimator</string>
 
     <string name="confirmed_paid">Your ride is confirmed and paid</string>
     <string name="registration_successfull">Your registration was successful</string>
