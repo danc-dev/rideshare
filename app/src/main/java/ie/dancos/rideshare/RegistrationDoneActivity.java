@@ -87,24 +87,7 @@ public class RegistrationDoneActivity extends AppCompatActivity {
 
 
 
-
-
-
-
-
-/*
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent i = new Intent(RegistrationDoneActivity.this, UserNavigationActivity.class);
-                startActivity(i);
-                finish();
-            }
-        }, TIME_OUT);
-
-        */
-
-    }
+    } // end of OnCreate
 
 
     private void getCustomerInfo_ifNotExist() {
@@ -115,7 +98,7 @@ public class RegistrationDoneActivity extends AppCompatActivity {
                 if (dataSnapshot.exists() && dataSnapshot.getChildrenCount() > 0) {
                     Map<String, Object> map = (Map<String, Object>) dataSnapshot.getValue();
                     if (map.get("email") != null) {
-                        Name = map.get("email").toString();
+                        Email = map.get("email").toString();
                     }
                     if (map.get("name") != null) {
                         Name = map.get("name").toString();
@@ -154,10 +137,6 @@ public class RegistrationDoneActivity extends AppCompatActivity {
 
         // end activity
         finish();
-
-
-
-
     }
 
 }
