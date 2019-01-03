@@ -69,6 +69,7 @@
             android:layout_marginLeft="16dp"
             android:autofillHints=""
             android:ems="10"
+            android:gravity="center"
             android:inputType="textPostalAddress" />
     </LinearLayout>
 
