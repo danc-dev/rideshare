@@ -41,7 +41,6 @@ public class RegistrationDoneActivity extends AppCompatActivity {
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
         Email = bundle.getString("email");
-        Toast.makeText(RegistrationDoneActivity.this, "email " + Email, Toast.LENGTH_LONG).show();
 
         textView_email = findViewById(R.id.textView_email);
         StringBuilder stringBuilder = new StringBuilder();
@@ -133,9 +132,8 @@ public class RegistrationDoneActivity extends AppCompatActivity {
         customerInfo.put("phone",Phone);
         // add to database
         mRideshareDatabase.updateChildren(customerInfo);
-        Toast.makeText(RegistrationDoneActivity.this, "Thanks "+Name+" your name and phone number was saved",Toast.LENGTH_LONG).show();
+        Toast.makeText(RegistrationDoneActivity.this, "Thanks "+Name+" \nYour name and phone number was saved",Toast.LENGTH_LONG).show();
 
-        // end activity
         finish();
     }
 
