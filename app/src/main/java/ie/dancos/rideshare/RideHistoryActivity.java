@@ -2,12 +2,11 @@ package ie.dancos.rideshare;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.MenuItem;
-import android.widget.TextView;
+import android.util.Log;
+
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -25,12 +24,11 @@ public class RideHistoryActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager mLayoutManager;
 
     private ArrayList<RideObject> rideObjectArrayList = new ArrayList<RideObject>();
-    private RideObject rideObject = new RideObject();
 
     private String userID;
     private FirebaseAuth mAuth;
     private DatabaseReference mRideshareDatabase;
-    private String ride,pick_up,drop_off,time,date, carType, phone,customerName,email;
+     private String pick_up,drop_off,time,date, carType, phone,customerName,email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,51 +37,53 @@ public class RideHistoryActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         userID = mAuth.getCurrentUser().getUid();
-       // mRideshareDatabase = FirebaseDatabase.getInstance().getReference().child("cabs").child("customers").child(userID);
-       // mRideshareDatabase = FirebaseDatabase.getInstance().getReference().child("cabs").child("bookings").child(userID).child("booking_497782");
-       // mRideshareDatabase = FirebaseDatabase.getInstance().getReference().child("cabs").child("bookings").child(userID).child("booking_497782");
         mRideshareDatabase = FirebaseDatabase.getInstance().getReference().child("cabs").child("bookings").child(userID);
 
+         getCustomerBookings2();
+
+        //test
+       // mAdapter= new RideHistoryAdapter(getRideHistoryTextData());
 
         RecyclerView = findViewById(R.id.recycleView);
         mLayoutManager = new LinearLayoutManager(this);
         RecyclerView.setLayoutManager(mLayoutManager);
-        getCustomerBookings();
-       // mAdapter= new RideHistoryAdapter(getRideHistory());
-        mAdapter= new RideHistoryAdapter(getCustomerBookings());
-        RecyclerView.setAdapter(mAdapter);
-        mAdapter.notifyDataSetChanged();
+
 
     }
 
-    private ArrayList<RideObject>  getCustomerBookings() {
+
+
+    public ArrayList<RideObject>  getCustomerBookings2() {
         mRideshareDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
                     for (DataSnapshot child : dataSnapshot.getChildren()) {
-                        RideObject rideObject = new RideObject();
-                        if (child.getKey().equals("carType")) {
-                            carType = child.getValue().toString();
-                        }
-                        if (child.getKey().equals("pick_up")) {
-                            pick_up = child.getValue().toString();
-                        }
-                        if (child.getKey().equals("drop_off")) {
-                            drop_off = child.getValue().toString();
-                        }
-                        if (child.getKey().equals("time")) {
-                            time = child.getValue().toString();
-                        }
-                        if (child.getKey().equals("date")) {
-                            date = child.getValue().toString();
-                        }
-                        rideObject.setRide(carType);
-                        rideObject.setPickupLocation(pick_up);
-                        rideObject.setPickupTime(time);
-                        rideObject.setPickupDate(date);
-                        rideObjectArrayList.add(rideObject);
-                    }
+                        customerName = child.child("name").getValue().toString();
+                        carType = child.child("carType").getValue().toString();
+                        pick_up = child.child("pick_up").getValue().toString();
+                        drop_off = child.child("drop_off").getValue().toString();
+                        date = child.child("date").getValue().toString();
+                        time = child.child("time").getValue().toString();
+
+                        Log.i("ridedata", carType);
+                        Log.i("ridedata", pick_up);
+                        Log.i("ridedata", time);
+                        Log.i("ridedata", date);
+                        Log.i("ridedata", drop_off);
+
+                    RideObject rideObject = new RideObject();
+                    rideObject.setPickupLocation(pick_up);
+                    rideObject.setName(customerName);
+                    rideObject.setDropoffLocation(drop_off);
+                    rideObject.setPickupDate(date);
+                    rideObject.setRide(carType);
+                    rideObject.setPickupTime(time);
+
+                    rideObjectArrayList.add(rideObject);
+                }
+                    mAdapter= new RideHistoryAdapter( rideObjectArrayList);
+                    RecyclerView.setAdapter(mAdapter);
                 }
             }
 
@@ -95,8 +95,9 @@ public class RideHistoryActivity extends AppCompatActivity {
     }
 
 
-    private ArrayList<RideObject> getRideHistory(){
+    private ArrayList<RideObject> getRideHistoryTextData(){
         //test info
+        RideObject rideObject = new RideObject();
         String pu1="17 The Cresent Bishopstown";
         String pu2="199 Douglas Road Cork";
         String pu3="Pacelli Brokeshire Lawn, Cork";
@@ -117,10 +118,6 @@ public class RideHistoryActivity extends AppCompatActivity {
         String ride2="Mini Bus";
         String ride3="Porsche";
         String ride4="Limo";
-
-
-
-
 
         rideObject.setPickupLocation(pu1);
         rideObject.setDropoffLocation(do1);

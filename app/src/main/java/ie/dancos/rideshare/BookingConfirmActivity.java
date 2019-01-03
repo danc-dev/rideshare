@@ -1,6 +1,5 @@
 package ie.dancos.rideshare;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -201,11 +200,10 @@ public class BookingConfirmActivity extends AppCompatActivity {
         String bookingNumber = "booking_"+randomNumberString;
         // add to database
       //  mRideshareDatabase = FirebaseDatabase.getInstance().getReference().child("cabs").child("bookings").child(userID).child(bookingNumber);
-        mRideshareDatabase = FirebaseDatabase.getInstance().getReference().child("cabs").child("bookings").child(userID);
+        mRideshareDatabase = FirebaseDatabase.getInstance().getReference().child("cabs").child("bookings").child(userID).push();
         mRideshareDatabase.updateChildren(customerBookingInfo);
-        Toast.makeText(BookingConfirmActivity.this, "Thanks your booking was saved",Toast.LENGTH_LONG).show();
+        Toast.makeText(BookingConfirmActivity.this, "Thanks\n Your booking was saved",Toast.LENGTH_LONG).show();
 
-        // end activity
         finish();
     }
 
